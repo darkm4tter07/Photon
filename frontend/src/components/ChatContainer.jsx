@@ -48,7 +48,7 @@ const ChatContainer = () => {
       {/* Message Box */}
       <div  className='flex md:border-l-[2px] custom-scrollbar md:border-[#ffffff1e] flex-col h-[calc(100vh-25.5rem)] sm:h-[calc(100vh-26rem)] md:max-h-full md:flex-1 overflow-y-auto p-4 gap-4'>
         {messages.map(message=>(
-            <div ref={messagesEndRef} key={message._id} className={`flex flex-col gap-1 ${message.senderId===selectedUser._id ? "items-start" : "items-end"}`}>
+            <div ref={messagesEndRef} key={message._id} className={`flex flex-shrink-0 flex-col gap-1 ${message.senderId===selectedUser._id ? "items-start" : "items-end"}`}>
               { message.createdAt ? (
                   <div className='text-xs text-gray-500'>
                     {new Date(message.createdAt).toLocaleDateString([], { day: '2-digit', month: 'long', year: 'numeric' })} <span className='mx-1 text-blue-800'>
@@ -65,7 +65,7 @@ const ChatContainer = () => {
 
               {
                 message.image && (
-                  <img src={message.image} alt="message" className='w-64 h-64 object-cover rounded-lg'/>
+                  <img src={message.image} alt="message" className='w-36 md:w-64 object-cover rounded-lg'/>
                 )
               }
             </div>

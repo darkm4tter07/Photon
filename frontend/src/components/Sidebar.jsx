@@ -29,7 +29,7 @@ const Sidebar = () => {
         {users.map((user) => (
           <div
             key={user._id}
-            className={`flex flex-col items-center md:flex-row gap-2 p-2 rounded-md cursor-pointer transition-all
+            className={`flex flex-col flex-shrink-0 items-center md:flex-row gap-2 p-2 rounded-md cursor-pointer transition-all
               ${
                 selectedUserId === user._id
                   ? 'bg-[#000000a6] text-[#ffffffb1]'

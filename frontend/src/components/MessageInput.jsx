@@ -60,11 +60,11 @@ const MessageInput = () => {
                     </div>
                 </div>
             )}
-            <form onSubmit={handleSendMessage} className='flex items-center  gap-2'>
+            <form onSubmit={handleSendMessage} className='flex items-center flex-shrink-0 gap-2'>
                 <div className='flex-1 flex items-center gap-2'>
                     <input 
                         type="text" 
-                        className='flex-1 bg-[#313131] p-2 outline-none rounded-lg text-[#ffffffad] placeholder:opacity-25'
+                        className='bg-[#313131] p-2 w-[calc(100%-6.5rem)] outline-none rounded-lg text-[#ffffffad] placeholder:opacity-25'
                         placeholder='Type a message...'
                         value={text}
                         onChange={(e)=>setText(e.target.value)}
@@ -79,7 +79,7 @@ const MessageInput = () => {
 
                     <button
                         type="button"
-                        className={`flex cursor-pointer hover:scale-95 items-center justify-center size-10 rounded-full border 
+                        className={`flex mx-auto cursor-pointer hover:scale-95 items-center justify-center size-10 rounded-full border 
                                     ${imagePreview ? "text-green-500 border-green-500" : "text-gray-400 border-gray-400"}`}
                         onClick={() => fileInputRef.current?.click()}
                     >
@@ -92,7 +92,7 @@ const MessageInput = () => {
                                     hover:bg-gray-200 disabled:opacity-50"
                         disabled={!text.trim() && !imagePreview}
                     >
-                        <img src="/send.png" className=' size-5' alt="send" />
+                        <img src="/send.png" className='size-5' alt="send" />
                     </button>
                 </div>
             </form>
