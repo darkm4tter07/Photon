@@ -163,10 +163,10 @@ const Signup = () => {
             </button>
           </form>
 
-          <div className="text-sm font-light">
+          <div className="text-md font-light">
             Already a user?{" "}
             <Link to="/login" >
-              <span className="hover:underline cursor-pointer text-[#df0a0aa6]">
+              <span className="text-[#b80808] hover:underline cursor-pointer font-semibold">
                 Login
               </span>
             </Link>
