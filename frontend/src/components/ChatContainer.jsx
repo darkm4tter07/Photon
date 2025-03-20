@@ -5,7 +5,7 @@ import MessageInput from './MessageInput';
 
 
 const ChatContainer = () => {
-  const { selectedUser, getMessages, messages, isMessagesLoading, subscribeToMessages, ubsubscribeToMessages} = useChatStore();
+  const { selectedUser, getMessages, messages, isMessagesLoading, subscribeToMessages, unsubscribeToMessages} = useChatStore();
   const {onlineUsers} = useAuthStore();
   const messagesEndRef = useRef(null);
   useEffect(()=>{
@@ -14,9 +14,9 @@ const ChatContainer = () => {
       subscribeToMessages();
     }
     return ()=>{
-      ubsubscribeToMessages();
+      unsubscribeToMessages();
     }
-  },[selectedUser._id, getMessages, subscribeToMessages, ubsubscribeToMessages]);
+  },[selectedUser._id, getMessages, subscribeToMessages, unsubscribeToMessages]);
 
   useEffect(() => {
     if(messagesEndRef.current && messages){
